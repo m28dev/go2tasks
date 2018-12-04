@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gogoTasks</title>
+    <link href="./app.css" rel="stylesheet">
+    <script src="./assets/main.js"></script>
+</head>
+
+<body>
+    <button id="sign-in">Sign-In</button>
+    <iframe src="about:blank" class="refreshFrame"></iframe>
+    <div class="main-contents"><!-- main-contents --></div>
+    <!-- tamplates -->
+    <!-- メイン画面 -->
+    <template id="mainContents">
+        <h1>リスト名</h1>
+        <main></main>
+        <section>
+            <button type="button" class="clear">完了したタスクを削除</button>
+            <button type="button" class="reload">更新</button>
+            <button type="button" class="add">タスクを追加</button>
+            <button type="button" class="setting">設定</button>
+        </section>
+    </template>
+    <!-- タスク -->
+    <template id="task">
+        <h2>日付</h2>
+        <ul></ul>
+    </template>
+    <!-- タスク詳細 -->
+    <template id="taskDetail">
+        <form method="POST" action="">
+            <label for="taskName">タスク名</label>
+            <input type="text" name="taskName">
+            <label for="dueDate">日付</label>
+            <input type="date" name="dueDate">
+            <label for="notes">ノート</label>
+            <textarea name="notes"></textarea>
+            <input type="hidden" name="etag">
+            <button type="submit" class="save">保存</button>
+            <button type="button" class="cancel">キャンセル</button>
+        </form>
+    </template>
+    <!-- 設定 -->
+    <template id="setting">
+        <h2>リスト</h2>
+        <select></select>
+        <section>
+            <p>GitHubへのリンク</p>
+            <button class="logout">ログアウト</button>
+            <a href="#">戻る</a>
+        </section>
+    </template>
+</body>
+
+</html>

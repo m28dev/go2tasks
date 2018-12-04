@@ -1,0 +1,7 @@
+.refreshFrame {
+    visibility: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-width: 0;
+}

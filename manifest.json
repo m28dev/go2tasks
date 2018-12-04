@@ -1,0 +1,6 @@
+{
+    "short_name": "gogotask",
+    "name": "gogotask",
+    "start_url": "index.html?launcher=true",
+    "display": "standalone"
+  }

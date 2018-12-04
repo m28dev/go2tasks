@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oauth2callback</title>
+</head>
+
+<body>
+    <script>
+        const targetOrigin = 'http://localhost:8080';
+
+        // フラグメント識別子から"#"を除去
+        const fragments = location.hash.substring(1);
+
+        // 親の画面へアクセストークンを渡す
+        const reciever = window.opener || window.parent;
+        reciever.postMessage(fragments, targetOrigin);
+    </script>
+</body>
+
+</html>
