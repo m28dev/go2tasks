@@ -58,7 +58,9 @@ gotasks.createAuthReq = () => {
  */
 gotasks.receiveMessage = event => {
     // 送信元のチェック。自ホスト以外、またはWebpack Dev Serverの場合は処理を行わない
-    if(event.origin !== 'http://localhost:8080' || event.source.frameElement === null) return;
+    if(event.origin !== 'http://localhost:8080' || (event.data.type && event.data.type.startsWith('webpack'))) {
+        return;
+    }
 
     if (event.source.opener) {
         // ポップアップ画面から受け取ったときは初期利用として進める
